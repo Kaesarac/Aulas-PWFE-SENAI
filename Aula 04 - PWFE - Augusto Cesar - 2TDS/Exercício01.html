@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+    <script>
+        apagado = new Image();
+        apagado.src = "Bart_escuro.jpg";
+
+        aceso = new Image();
+        aceso.src = "bart.jpg";
+
+        function apaga(){
+            document.images[0].src = apagado.src;
+        }
+        function acende(){
+            document.images[0].src = aceso.src;
+        }
+    </script>
+</head>
+<body>
+    <a href="" onmouseover="acende()" onmouseout="apaga()">
+    <img src="Bart_escuro.jpg" width="43" height="58" border=0></a>
+</body>
+</html>
