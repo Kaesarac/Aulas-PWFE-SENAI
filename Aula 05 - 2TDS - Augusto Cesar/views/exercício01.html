@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrições</title>
+    <script>
+        var nome;
+        var email;
+        var num = 0;
+
+        function escrever(){
+            info = "Usuário número " + (++num) + "\n";
+            info += "Nome: " + nome + "\n";
+            info += "E-Mail: " + email + "\n\n";
+            alert(info);
+        }
+    </script>
+    <script>
+        hoje = new Date();
+        dia = hoje.getDate();
+        mes = hoje.getMonth() + 1;
+        ano = hoje.getYear() + 1900;
+        document.write("<h3>Hoje: " + dia + "/" + mes + "/" + ano + "</h3>");
+    </script>
+</head>
+<body bgcolor="white">
+    <form>
+
+        <h2 align=center>Cadastro</h2>
+
+        <div align=center>
+            <p><input type="button" value="Digitar Nome" onclick="nome=prompt('Seu nome', '')">
+               <input type="button" value="Digitar E-Mail" onclick="email=prompt('E-Mail', '')">
+               <input type="button" value="Cadastrar" onclick="escrever()">
+            </p><textarea rows=10 cols=40 name=Area></textarea>
+        </div>
+    </form>
+</body>
+</html>
