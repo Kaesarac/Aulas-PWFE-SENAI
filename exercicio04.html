@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+    <script type="text/javascript">
+        var banco = openDatabase('usuarios', '1.0', 'userbank', 2048);
+        var msg;
+
+        db.transaction(function(createTable){
+            createTable.executeSql("CREATE TABLE usuarios (ID PRIMARY KEY, nome TEXT, senha TEXT)");
+        });
+
+        function salvar(){
+            var nome = document.getElementById('nome').value;
+            var senha = document.getElementById('senha').value;
+            db.transaction(function(saveData){
+                saveData.executeSql("INSERT INTO usuarios (nome, senha) VALUES(?,?)", [nome,senha]);
+            });
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="salvar()">
+        <input type="text" id="nome" placeholder="Nome"><br>
+        <input type="password" id="senha" placeholder="Senha"><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
